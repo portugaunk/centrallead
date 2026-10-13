@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css?v=14">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<!-- A vitrine abre no tema escuro (azul-marinho). Quem escolheu outro tema em Configurações continua com o dele. -->
+<script>try{var t=localStorage.getItem("cl_tema")||"dark";document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
+<title>Empreendimentos — Portal do Cliente</title>
+</head>
+<body data-pagina="vitrine" class="portal vitrine2">
+
+<div id="tela-carregando" class="carregando">Abrindo o portal…</div>
+
+<div id="tela-conteudo" class="oculto">
+  <div id="faixa-equipe" class="faixa-equipe oculto">
+    <span>Você está vendo como equipe (<b id="faixa-equipe-nome"></b>).</span>
+    <a id="faixa-equipe-voltar" href="painel.html">Voltar para a central</a>
+  </div>
+
+  <header class="topo-portal">
+    <a class="marca marca-logo" href="portal.html" aria-label="Vértice — Portal do Cliente"><img class="logo-vertice logo-sobre-escuro " src="img/logo-vertice.png" alt="Vértice" height="34"><img class="logo-vertice logo-sobre-claro " src="img/logo-vertice-claro.png" alt="" aria-hidden="true" height="34"><span class="marca-sub">Portal do Cliente</span></a>
+    <nav class="nav-portal" aria-label="Navegação do portal">
+      <a href="portal.html">Início</a>
+      <a href="empreendimentos.html" id="nav-emp" aria-current="page">Empreendimentos</a>
+      <button type="button" id="nav-fav">Favoritos <span class="contador-nav oculto" id="nav-fav-n">0</span></button>
+      <button type="button" id="nav-atendimento">Atendimento</button>
+    </nav>
+    <div id="topo-cliente" class="eu oculto">
+      <div class="eu-info"><b id="topo-cliente-nome"></b></div>
+      <button class="btn btn-min" id="btn-sair-cliente">Sair</button>
+    </div>
+  </header>
+
+ <div class="banner-marca">
+  <section class="intro-vitrine">
+    <div class="intro-texto" data-reveal>
+      <h1>Empreendimentos</h1>
+      <p class="sub">Encontre o empreendimento ideal para você.</p>
+    </div>
+    <div class="indicadores oculto" data-reveal style="--d:.12s" id="indicadores" aria-label="Resumo do portal"></div>
+  </section>
+  </div>
+
+  <div class="barra-vitrine" role="search" data-reveal style="--d:.18s">
+    <div class="busca-caixa">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+      <input type="search" id="busca-vitrine" placeholder="Buscar por nome ou endereço" aria-label="Buscar empreendimento">
+    </div>
+    <select id="filtro-localidade" aria-label="Região"><option value="">Todas as regiões</option></select>
+    <select id="filtro-status" aria-label="Estágio da obra"><option value="">Qualquer estágio</option></select>
+    <button class="chip" id="chip-favoritos" aria-pressed="false">♥ Meus favoritos <span id="chip-fav-n"></span></button>
+    <button class="btn btn-filtros" id="btn-filtros" aria-expanded="false" aria-controls="painel-filtros">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Filtros <span class="contador-nav oculto" id="filtros-n">0</span>
+    </button>
+  </div>
+
+  <div class="painel-filtros oculto" id="painel-filtros" role="region" aria-label="Filtros avançados">
+    <div class="filtros-grade">
+      <div class="campo-filtro"><label>Faixa de preço (R$ mil)</label>
+        <div class="par"><input type="number" id="f-preco-min" min="0" placeholder="Mínimo" inputmode="numeric"><span>até</span><input type="number" id="f-preco-max" min="0" placeholder="Máximo" inputmode="numeric"></div></div>
+      <div class="campo-filtro"><label>Área (m²)</label>
+        <div class="par"><input type="number" id="f-area-min" min="0" placeholder="Mínima" inputmode="numeric"><span>até</span><input type="number" id="f-area-max" min="0" placeholder="Máxima" inputmode="numeric"></div></div>
+      <div class="campo-filtro"><label>Dormitórios</label>
+        <div class="seg" id="f-dorms" data-grupo="dorms"><button type="button" data-v="1">1</button><button type="button" data-v="2">2</button><button type="button" data-v="3">3</button><button type="button" data-v="4">4+</button></div></div>
+      <div class="campo-filtro"><label>Vagas</label>
+        <div class="seg" id="f-vagas" data-grupo="vagas"><button type="button" data-v="1">1</button><button type="button" data-v="2">2</button><button type="button" data-v="3">3+</button></div></div>
+      <div class="campo-filtro"><label for="f-localidade">Região</label><select id="f-localidade"><option value="">Todas</option></select></div>
+      <div class="campo-filtro"><label for="f-bairro">Bairro</label><select id="f-bairro"><option value="">Todos</option></select></div>
+      <div class="campo-filtro"><label for="f-status">Status da obra</label><select id="f-status"><option value="">Qualquer</option></select></div>
+      <div class="campo-filtro" id="campo-tipo"><label for="f-tipo">Tipo de imóvel</label><select id="f-tipo"><option value="">Todos</option></select></div>
+    </div>
+    <div class="filtros-pe">
+      <small>Empreendimentos sem a informação cadastrada não aparecem quando o filtro correspondente está ativo.</small>
+      <div><button class="btn btn-min" id="f-limpar" type="button">Limpar filtros</button> <button class="btn btn-min btn-primario" id="f-aplicar" type="button">Ver resultados</button></div>
+    </div>
+  </div>
+
+  <div class="linha-resultado">
+    <div class="contagem" id="contagem" aria-live="polite"></div>
+    <div class="controles-resultado">
+      <label class="ordenar">Ordenar por
+        <select id="ordenar" aria-label="Ordenar por">
+          <option value="relevantes">Mais relevantes</option>
+          <option value="menor-preco">Menor preço</option>
+          <option value="maior-preco">Maior preço</option>
+          <option value="menor-area">Menor área</option>
+          <option value="maior-area">Maior área</option>
+          <option value="recentes">Mais recentes</option>
+        </select>
+      </label>
+      <div class="seg seg-vista" role="group" aria-label="Forma de exibição">
+        <button type="button" id="vista-lista" aria-pressed="true">Lista</button>
+        <button type="button" id="vista-mapa" aria-pressed="false">Mapa</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="detalhe-pagina" class="oculto"></div>
+
+  <div id="grade-vitrine" class="grade-vitrine"></div>
+
+  <div id="vista-mapa-area" class="mapa-area oculto">
+    <ol class="mapa-lista" id="mapa-lista"></ol>
+    <div class="mapa-painel">
+      <iframe id="mapa-iframe" class="mapa-iframe" title="Mapa do empreendimento selecionado" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <p class="mapa-nota">Mostra um empreendimento por vez, pelo endereço. Marcadores de todos ao mesmo tempo dependem de coordenadas e de um provedor de mapas, ainda não configurados.</p>
+    </div>
+  </div>
+
+  <section class="recomendados oculto" id="recomendados" data-reveal>
+    <h2 id="rec-titulo">Empreendimentos recomendados para você</h2>
+    <p class="sub" id="rec-sub"></p>
+    <div class="grade-vitrine grade-rec" id="grade-rec"></div>
+  </section>
+
+  <footer class="rodape-portal">Informações sujeitas a alteração sem aviso prévio. Confirme valores e condições com um consultor.</footer>
+</div>
+
+<div class="barra-comparar oculto" id="barra-comparar" role="region" aria-label="Comparação">
+  <span id="comparar-texto"></span>
+  <div><button class="btn btn-min" id="comparar-limpar">Limpar</button> <button class="btn btn-min btn-primario" id="comparar-abrir">Comparar</button></div>
+</div>
+
+<div id="area-modal"></div>
+
+<script src="js/dados.js?v=3"></script>
+<script src="js/portal.js?v=4"></script>
+<script src="js/revelar.js"></script>
+</body>
+</html>

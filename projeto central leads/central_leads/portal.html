@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css?v=14">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<script>try{var t=localStorage.getItem("cl_tema");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<title>Portal do Cliente</title>
+</head>
+<body data-pagina="portal" class="portal">
+
+<div id="tela-carregando" class="carregando">Abrindo o portal…</div>
+
+<div id="tela-conteudo" class="oculto">
+  <header class="topo-portal">
+    <a class="marca marca-logo" href="portal.html" aria-label="Vértice — Portal do Cliente"><img class="logo-vertice logo-sobre-escuro " src="img/logo-vertice.png" alt="Vértice" height="34"><img class="logo-vertice logo-sobre-claro " src="img/logo-vertice-claro.png" alt="" aria-hidden="true" height="34"><span class="marca-sub">Portal do Cliente</span></a>
+    <div class="acoes">
+      <a class="btn btn-min" href="entrar-cliente.html" id="topo-entrar">Entrar</a>
+      <a class="btn btn-min btn-primario" href="cadastro-cliente.html" id="topo-criar">Criar conta</a>
+    </div>
+  </header>
+  <section class="hero-portal">
+    <div class="hero-texto">
+      <p class="hero-lema" data-reveal>Conectando você ao seu próximo imóvel</p>
+      <h1 data-reveal>Ache o apartamento certo, com a planta na mão.</h1>
+      <p class="sub" data-reveal style="--d:.1s">Compare lançamentos por região, veja metragem, dormitórios, lazer e prazo de entrega de cada empreendimento e guarde os que você gostou.</p>
+      <div class="botoes" data-reveal style="--d:.2s">
+        <a class="btn btn-primario" id="cta-principal" href="cadastro-cliente.html">Criar minha conta</a>
+        <a class="btn" id="cta-secundario" href="entrar-cliente.html">Já tenho conta</a>
+      </div>
+      <div class="hero-numeros oculto" id="hero-numeros"></div>
+    </div>
+  </section>
+  <section class="faixa-dados" aria-label="Portal em números">
+    <div class="faixa-grade">
+      <div data-reveal><b id="fd-total" data-contar="0">—</b><span>empreendimentos</span></div>
+      <div data-reveal style="--d:.1s"><b id="fd-regioes" data-contar="0">—</b><span>regiões atendidas</span></div>
+      <div data-reveal style="--d:.2s"><b data-contar="3">3</b><span>para comparar lado a lado</span></div>
+      <div data-reveal style="--d:.3s"><b data-contar="8">8</b><span>filtros para refinar a busca</span></div>
+    </div>
+  </section>
+  <section class="beneficios-sec">
+    <div class="cab-sec" data-reveal><span class="sobretitulo">Por que usar o portal</span><h2>Tudo para decidir com segurança</h2><p class="sub">Informações organizadas do primeiro olhar até o contato com o consultor.</p></div>
+    <div class="beneficios"><article class="beneficio" data-reveal style="--d:0.0s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V5h12v15M4 12h12M9 5v15"/><path d="M16 9h4v11h-4"/></svg><h3>Plantas e metragens</h3><p>Veja as tipologias, a área e o número de dormitórios e vagas de cada empreendimento, sem precisar pedir.</p></article><article class="beneficio" data-reveal style="--d:0.1s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg><h3>Filtros que ajudam de verdade</h3><p>Preço, área, dormitórios, vagas, região, bairro, status da obra e tipo de imóvel, com ordenação por preço e área.</p></article><article class="beneficio" data-reveal style="--d:0.2s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.200-7-11.500a7 7 0 0 1 14 0C19 14.800 12 21 12 21Z"/><circle cx="12" cy="9.500" r="2.500"/></svg><h3>Localização no mapa</h3><p>Cada empreendimento mostra o endereço e o mapa da vizinhança, para você avaliar o entorno.</p></article><article class="beneficio" data-reveal style="--d:0.0s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.200-8-11a4.500 4.500 0 0 1 8-2.800A4.500 4.500 0 0 1 20 10c0 5.800-8 11-8 11Z"/></svg><h3>Seus favoritos, à mão</h3><p>Guarde os empreendimentos de que gostou e volte a eles quando quiser, em uma lista só sua.</p></article><article class="beneficio" data-reveal style="--d:0.1s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4v16M18 4v16M6 8h12M6 16h12"/></svg><h3>Comparação lado a lado</h3><p>Escolha até 3 empreendimentos e compare preço, área, dormitórios, vagas, lazer, localização e status da obra.</p></article><article class="beneficio" data-reveal style="--d:0.2s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4Z"/></svg><h3>Fale com um consultor</h3><p>Em cada empreendimento, o botão “Tenho interesse” abre o contato com um consultor para tirar dúvidas.</p></article></div>
+  </section>
+  <section class="como" data-reveal>
+    <h2>Como funciona</h2>
+    <p class="sub">Três passos, sem burocracia.</p>
+    <div class="passos">
+      <div class="passo" data-reveal><svg class="icone" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3"><path d="M38 38V10H10v28h10" /><path d="M20 38V24a14 14 0 0 1 18 14" stroke="#FF6B2C"/></svg><h3>Crie sua conta</h3><p>Só nome, e-mail e uma senha. Leva menos de um minuto.</p></div>
+      <div class="passo" data-reveal><svg class="icone" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 12h36M6 24h36M6 36h36M16 6v36M30 6v36" stroke-width="2"/><rect x="16" y="12" width="14" height="12" stroke="#FF6B2C"/></svg><h3>Filtre por região</h3><p>Busque pelo nome ou escolha a zona da cidade e o estágio da obra.</p></div>
+      <div class="passo" data-reveal><svg class="icone" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3"><path d="M24 40S8 30 8 18a8 8 0 0 1 16-2 8 8 0 0 1 16 2c0 12-16 22-16 22Z"/></svg><h3>Guarde os favoritos</h3><p>Salve os empreendimentos que combinam com você e volte a eles quando quiser.</p></div>
+    </div>
+  </section>
+  <section class="regioes-lista oculto" id="bloco-regioes" data-reveal>
+    <h2>Onde há empreendimentos</h2>
+    <div class="regioes-chips" id="regioes-chips"></div>
+  </section>
+  <section class="faq-sec">
+    <div class="cab-sec" data-reveal><span class="sobretitulo">Dúvidas frequentes</span><h2>Perguntas e respostas</h2></div>
+    <div class="faq"><details class="faq-item" data-reveal style="--d:0.00s"><summary>Como crio minha conta?</summary><p>Clique em “Criar conta”, informe nome, e-mail e uma senha. Em menos de um minuto você já pode ver os empreendimentos.</p></details><details class="faq-item" data-reveal style="--d:0.06s"><summary>Posso comparar empreendimentos?</summary><p>Sim. Na vitrine, use o botão “Comparar” nos cards (até 3 por vez) e abra a comparação lado a lado.</p></details><details class="faq-item" data-reveal style="--d:0.12s"><summary>Os valores e condições são definitivos?</summary><p>Não. As informações estão sujeitas a alteração sem aviso prévio. Confirme valores e condições com um consultor antes de decidir.</p></details><details class="faq-item" data-reveal style="--d:0.18s"><summary>Como falo com um consultor?</summary><p>Abra o empreendimento que te interessa e clique em “Tenho interesse”. Você também encontra o atendimento no menu do portal.</p></details><details class="faq-item" data-reveal style="--d:0.24s"><summary>Meus favoritos ficam salvos?</summary><p>Ficam guardados no navegador que você está usando, e voltam quando você abrir o portal de novo por ele.</p></details></div>
+  </section>
+  <section class="cta-final" data-reveal>
+    <h2>Pronto para encontrar o seu próximo imóvel?</h2>
+    <p>Crie sua conta, explore os empreendimentos e guarde os que combinam com você.</p>
+    <div class="botoes"><a class="btn btn-primario" id="cta-final" href="cadastro-cliente.html">Criar minha conta</a><a class="btn" id="cta-final-2" href="entrar-cliente.html">Já tenho conta</a></div>
+  </section>
+  <footer class="rodape-portal">Informações sujeitas a alteração sem aviso prévio. Confirme valores e condições com um corretor.</footer>
+</div>
+
+<script src="js/dados.js?v=3"></script>
+<script src="js/portal.js?v=4"></script>
+<script src="js/particulas.js"></script>
+<script src="js/revelar.js"></script>
+</body>
+</html>

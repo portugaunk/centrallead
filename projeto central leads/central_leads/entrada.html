@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css?v=13">
+<script>try{var t=localStorage.getItem("cl_tema");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="icon" href="img/favicon.png" type="image/png">
+<title>Central de Leads</title>
+</head>
+<body data-pagina="entrada">
+
+<div id="tela-carregando" class="carregando">Abrindo a central…</div>
+
+<div id="tela-conteudo" class="acesso oculto">
+  <aside class="acesso-lado"><div class="lado-marca"><img class="logo-vertice" src="img/logo-vertice.png" alt="Vértice" height="46"></div><div><h2>Cada contato chega pela porta certa.</h2><p>Leads, retornos e visitas da equipe, num só lugar.</p></div></aside>
+  <div class="cartao-acesso cartao-largo entrada">
+    <div class="marca"><svg class="simbolo" viewBox="0 0 64 64" aria-hidden="true"><path class="p" d="M52 52V12H12v40h16"/><path class="a" d="M28 52V28a24 24 0 0 1 24 24"/></svg><b>Central de Leads</b><span id="entrada-empresa"></span></div>
+    <h1>Seus leads, num só lugar.</h1>
+    <p class="sub">Acompanhe cada contato do funil, chame pelo WhatsApp com mensagem pronta e veja os números da equipe.</p>
+    <div class="botoes">
+      <a class="btn btn-primario btn-cheio" href="login.html">Entrar (equipe)</a>
+      <a class="btn btn-cheio" href="cadastro.html">Criar conta de equipe</a>
+    </div>
+    <p class="aviso">Contas novas da equipe entram como corretor, passam a ver os próprios leads e métricas e precisam ser liberadas pela administração.</p>
+    <p class="aviso"><b>É cliente?</b> <a href="portal.html">Acesse o Portal do Cliente</a> — o cadastro é livre, sem precisar de liberação.</p>
+  </div>
+</div>
+
+<script>
+/* vigia: se em 10 s a tela ainda diz "Abrindo a central…", os scripts não rodaram */
+setTimeout(function () {
+  var c = document.getElementById('tela-carregando');
+  if (c && !c.classList.contains('oculto') && c.textContent.trim() === 'Abrindo a central…') {
+    c.innerHTML = '<div style="max-width:460px;text-align:center;padding:0 20px"><h2>Está demorando mais que o normal</h2>' +
+      '<p class="sub">A página não terminou de abrir. As causas mais comuns são arquivos das pastas <b>js</b> ou <b>api</b> que não foram enviados (ou ficaram na versão antiga), ou o PHP não estar respondendo.</p>' +
+      '<p class="sub" style="margin-top:8px">Teste: abra <a href="api/auth.php?acao=sessao" target="_blank">api/auth.php?acao=sessao</a>. Deve aparecer um texto começando com {&quot;logado&quot;. Depois volte aqui e aperte Ctrl+F5.</p>' +
+      '<button class="btn btn-primario" style="margin-top:14px" onclick="location.reload()">Recarregar</button></div>';
+  }
+}, 10000);
+</script>
+<script src="js/dados.js?v=2"></script>
+<script src="js/acesso.js?v=2"></script>
+<script src="js/particulas.js"></script>
+</body>
+</html>

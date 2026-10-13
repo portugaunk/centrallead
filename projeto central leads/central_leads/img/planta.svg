@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice"><defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#8DB2FF" stroke-opacity=".09"/></pattern></defs><rect width="800" height="1000" fill="#0A1626"/><rect width="800" height="1000" fill="url(#g)"/>
+<g stroke="#8DB2FF" fill="none" stroke-opacity=".55" stroke-width="6"><path d="M140 300H660V860H140Z"/><path d="M400 300V560M140 560H300M420 560H660M400 700V860M260 860V700H400"/></g>
+<g stroke="#8DB2FF" fill="none" stroke-opacity=".35" stroke-width="2"><path d="M300 560A70 70 0 0 0 230 490"/><path d="M420 560a70 70 0 0 1 70-70"/><path d="M400 700a70 70 0 0 1-70 70"/></g>
+<path d="M300 860h70" stroke="#0A1626" stroke-width="8"/><path d="M300 860V790A70 70 0 0 1 370 860" stroke="#FF8348" fill="none" stroke-width="4"/>
+<g stroke="#8DB2FF" stroke-opacity=".5" stroke-width="1.5"><path d="M140 250v-20M660 250v-20M140 240H660M700 300h20M700 860h20M710 300V860"/></g>
+<g fill="#8DB2FF" fill-opacity=".6" font-family="Archivo,Arial,sans-serif" font-size="20"><text x="400" y="232" text-anchor="middle">13,00 m</text><text transform="translate(740 580) rotate(90)" text-anchor="middle">14,00 m</text></g></svg>

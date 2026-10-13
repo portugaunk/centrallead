@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css?v=7">
+<script>try{var t=localStorage.getItem("cl_tema");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="icon" href="img/favicon.png" type="image/png">
+<title>Administração — Central de Leads</title>
+</head>
+<body data-perfil="admin">
+
+<div id="tela-carregando" class="carregando">Abrindo a central…</div>
+
+<div id="tela-app" class="app oculto">
+  <header class="topo-mobile">
+    <div class="marca"><img class="logo-vertice logo-sobre-escuro " src="img/logo-vertice.png" alt="Vértice" height="28"><img class="logo-vertice logo-sobre-claro " src="img/logo-vertice-claro.png" alt="" aria-hidden="true" height="28"><span id="marca-empresa-mob"></span></div>
+    <div class="eu"><div class="avatar" id="meu-avatar-mob"></div><button class="btn btn-min" id="btn-sair-mob">Sair</button></div>
+  </header>
+  <aside class="lateral">
+    <div class="marca" style="margin-bottom:18px"><img class="logo-vertice" src="img/logo-vertice.png" alt="Vértice" height="34"><span id="marca-empresa"></span></div>
+    <nav id="nav-lateral"></nav>
+    <div class="rodape-lateral">
+      <div class="eu">
+        <div class="avatar" id="meu-avatar"></div>
+        <div class="eu-info"><b id="meu-nome"></b><span id="meu-papel"></span></div>
+      </div>
+      <a class="btn btn-min btn-cheio" style="margin-top:10px" href="empreendimentos.html" target="_blank" rel="noopener">Portal do cliente</a>
+      <button class="btn btn-min btn-cheio" style="margin-top:6px" id="btn-link-vitrine" title="Link da vitrine com o seu nome: quem se cadastrar por ele fica como seu lead">Copiar meu link da vitrine</button>
+      <button class="btn btn-min btn-cheio" style="margin-top:6px" id="btn-sair">Sair</button>
+    </div>
+  </aside>
+  <main class="conteudo" id="conteudo"></main>
+  <nav class="barra-inferior" id="nav-mobile"></nav>
+</div>
+
+<div id="area-modal"></div>
+<div class="torrada" id="torrada"></div>
+
+<script>
+/* vigia: se em 10 s a tela ainda diz "Abrindo a central…", os scripts não rodaram */
+setTimeout(function () {
+  var c = document.getElementById('tela-carregando');
+  if (c && !c.classList.contains('oculto') && c.textContent.trim() === 'Abrindo a central…') {
+    c.innerHTML = '<div style="max-width:460px;text-align:center;padding:0 20px"><h2>Está demorando mais que o normal</h2>' +
+      '<p class="sub">A página não terminou de abrir. As causas mais comuns são arquivos das pastas <b>js</b> ou <b>api</b> que não foram enviados (ou ficaram na versão antiga), ou o PHP não estar respondendo.</p>' +
+      '<p class="sub" style="margin-top:8px">Teste: abra <a href="api/auth.php?acao=sessao" target="_blank">api/auth.php?acao=sessao</a>. Deve aparecer um texto começando com {&quot;logado&quot;. Depois volte aqui e aperte Ctrl+F5.</p>' +
+      '<button class="btn btn-primario" style="margin-top:14px" onclick="location.reload()">Recarregar</button></div>';
+  }
+}, 10000);
+</script>
+<script src="js/dados.js?v=3"></script>
+<script src="js/app.js?v=6"></script>
+</body>
+</html>
